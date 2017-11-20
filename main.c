@@ -16,7 +16,7 @@
 #define Y_MIN 0
 #define Y_MAX 27
 
-// Define tile A as a solid block of color from palette entry 1
+// Define TILE_A as a solid block of color from palette entry 1
 #define VRAM_POS_TILE_FILL 1
 const u32 TILE_FILL[8] =
 {
@@ -30,10 +30,12 @@ const u32 TILE_FILL[8] =
   0x11111111,
 };
 
-// Define tile B as a solid block of color from palette entry 2.
-// Since this tile will be placed in front of TILE_FILL the pixels
-// with color 0 will be transparent and color from TILE_FILL will
-// be visible in these locations.
+// Define TILE_CURSOR as an empty square; a tranparent inner square
+// and an outer square of color 2 from the palette. Since this tile
+// will be placed in front of TILE_FILL the pixels with color 0 will
+// be transparent and color from TILE_FILL will be visible in these
+// locations. Note how the shape of the drawn image is visible in
+// the arrangement of 2's and 0's in the tile data, if stretched.
 #define VRAM_POS_TILE_CURSOR 2
 const u32 TILE_CURSOR[8] =
 {
